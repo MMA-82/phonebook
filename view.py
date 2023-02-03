@@ -1,7 +1,40 @@
 
+commands = ['Открыть файл', 
+            'Сохранить файл', 
+            'Показать все контакты', 
+            'Создать контакт', 
+            'Удалить контакт', 
+            'Изменить контакт', 
+            'Найти контакт', 
+            'Выход из программы']
 
-def menu():
-   print('1.Открыть справочник\n2.Сохранить справочник\n3.показать все контакты\n4.Создать контакты\n5.Удалить контакты\n6.Изменить контакты\n7.Найти контакты\n8.Выход')
+def main_menu():
+   print('Главное меню:')
+   for i, item in enumerate(commands, 1):
+      print(f'\t{i}. {item}')
+   choice = int(input('Выберете пункт меню: '))
+   return choice
 
-def get_point():
-    return int(input('Выберите пункт меню: '))
+def show_contacts(phone_list: list):
+   if len(phone_list) < 1:
+      print('Телефонная книга не открыта или пустая')
+   else:
+      print()
+      for i, contact in enumerate(phone_list, 1):
+         print(f'\t{i}. {contact[0]:20} {contact[1]:13} {contact[2]:20}')
+      print()
+
+def create_new_contact():
+   name = print('Введите имя: ')
+   phone = print('Введите номер телефона: ')
+   comment = print('Введите описание: ')
+   return name, phone, comment
+
+
+def find_contact():
+   find = print('Введите искомый элемент контакта: ')
+   return find
+
+def input_error():
+   print('Ошибка ввода. Введите корректный пункт меню!!!')
+

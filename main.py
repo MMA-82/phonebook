@@ -1,2 +1,2 @@
-import controller as c
-c.button_click()
+import controller
+controller.start()
