@@ -7,6 +7,7 @@ def start():
         choice = view.main_menu()
         if choice == 1:
             model.open_file()
+            view.open_phone_book()
         elif choice == 2:
             model.save_file()
         elif choice == 3:
@@ -22,6 +23,11 @@ def start():
             find = view.find_contact()
             result = model.search_contact(find)
             view.show_contacts(result)
+        elif choice == 8:
+            model.close_file()
+            view.exit()
+            break
         else:
             view.input_error()
+    
             

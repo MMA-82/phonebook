@@ -23,19 +23,26 @@ def get_phone_book():
     global phone_book
     return phone_book
 
-def add_new_contact(new_contact: list):
+def add_new_contact(new_contact):
     global phone_book
     phone_book.append(new_contact)
 
 
-def search_contact(find: str):
+def search_contact(find):
     global phone_book
     result = []
     for contact in phone_book:
-        for item in contact:
-            if find in item:
+        for field in contact:
+            if find in field:
                 result.append(contact)
                 break
     return result
+
+def close_file():
+    global phone_book
+    global path
+    data = open('phone_book.txt', 'r')
+    data.close()
+
 
     
