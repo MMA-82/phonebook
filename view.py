@@ -43,10 +43,6 @@ def create_new_contact():
    print()
    return name, phone, comment
 
-# def delete_contact():
-#    deleted = input('Укажите имя контакта, который хотите удалить: ')
-#    return deleted
-
 def confirm_delete(del_contact):
    confirm = input(f'Вы точно хотите удалить {del_contact}? да/нет: ').lower()
    if confirm == 'да':

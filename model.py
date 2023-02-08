@@ -54,7 +54,6 @@ def update_contact(index, new):
     phone_book[index][1] = new[1] if new[1] != '' else phone_book[index][1]
     phone_book[index][2] = new[2] if new[2] != '' else phone_book[index][2]
 
-
 def search_contact(find):
     global phone_book
     result = []
