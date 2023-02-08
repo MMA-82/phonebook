@@ -1,5 +1,4 @@
 
-
 commands = ['Открыть книгу', 
             'Сохранить книгу', 
             'Показать все контакты', 
@@ -21,6 +20,10 @@ def main_menu():
 def open_phone_book():
    print('Вы открыли телефонную книгу')
    print()
+
+def save_phone_book():
+   print('Изменения сохранены')
+   print()
  
 def show_contacts(phone_list: list):
    if len(phone_list) < 1:
@@ -33,15 +36,54 @@ def show_contacts(phone_list: list):
       print()
 
 def create_new_contact():
-   name = print('Введите имя: ')
-   phone = print('Введите номер телефона: ')
-   comment = print('Введите описание: ')
+   name = input('Введите имя: ')
+   phone = input('Введите номер телефона: ')
+   comment = input('Введите описание: ')
+   print('Появился новый контакт! Выберите п.3, чтобы проверить')
+   print()
    return name, phone, comment
-   
 
+# def delete_contact():
+#    deleted = input('Укажите имя контакта, который хотите удалить: ')
+#    return deleted
 
+def confirm_delete(del_contact):
+   confirm = input(f'Вы точно хотите удалить {del_contact}? да/нет: ').lower()
+   if confirm == 'да':
+      return True
+   else:
+      return False
+
+def fact_delete():
+   print('Контакт удален! Выберите п.3, чтобы проверить')
+   print()
+
+def select_contact():
+   select = input('Выберите контакт: ')
+   return select
+
+def change_contact():
+   print('Введите новые данные, или пропустите, нажав Enter')
+   new_name = input('Введите имя: ')
+   new_phone = input('Введите номер телефона: ')
+   new_comment = input('Введите описание: ')
+   print()
+   return new_name, new_phone, new_comment
+
+def fact_change():
+   print('Изменения внесены! Выберите п.3, чтобы проверить')
+   print()
+ 
+def empty_request():
+   print('Совпадений не найдено, попробуйте еще!')
+   print()
+
+def many_request():
+   print('Найдено несколько схожих контактов, введите данные точнее!')
+   print()   
+ 
 def find_contact():
-   find = str(print('Введите искомый элемент: '))
+   find = input('Введите искомые данные: ')
    return find
 
 def input_error():
